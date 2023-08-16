@@ -11,7 +11,7 @@ import (
 const PROMPT = ">>"
 
 func Start(in io.Reader, out io.Writer) {
-	scanner := bufio.NewScanner(in);
+	scanner := bufio.NewScanner(in)
 
 	for {
 		fmt.Print(PROMPT)
@@ -24,7 +24,7 @@ func Start(in io.Reader, out io.Writer) {
 		l := lexer.New(line)
 
 		for tok := l.NextToken(); tok.Type != token.EOF; tok = l.NextToken() {
-			fmt.Printf("%+v\n",tok)
+			fmt.Printf("%+v\n", tok)
 		}
 	}
 }
